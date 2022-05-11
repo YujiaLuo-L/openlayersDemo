@@ -19,7 +19,7 @@
 <script setup lang="ts">
 import menu from '@/router/menu';
 import { ref } from 'vue-demi';
-let activeMenu: string = ref('');
+let activeMenu = ref('');
 const menuData = menu.filter((item) => {
     return item.path;
 });

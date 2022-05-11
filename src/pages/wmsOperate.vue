@@ -11,7 +11,7 @@ import { onMounted, onBeforeUnmount } from 'vue';
 import { initMap } from '@/mapLibs/initMap';
 import { wmsOperate } from '@/mapLibs/wmsOperate';
 let map: Record<string, any>;
-let wmsLayer: Record<string, any>;
+let wmsLayer: any;
 const { loadWmsLayer, handleWmsSelect, removeClick } = wmsOperate();
 onMounted(() => {
     map = initMap('map_container');

@@ -50,7 +50,7 @@ export function wmsOperate() {
                         }
                         // 在这个then里面我们能拿到最终的数据
                         const { features } = JSON.parse(data);
-                        console.log(features);
+                        console.log('wms查询结果', features);
                         const featureArr: any[] = [];
                         const style = createStyle();
                         features.forEach((item: Record<string, any>) => {

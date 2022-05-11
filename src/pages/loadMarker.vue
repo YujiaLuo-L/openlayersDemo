@@ -1,11 +1,16 @@
 <template>
-    <div id="map_container"></div>
+    <div id="map_container">
+        <el-button type="primary" @click="clickToShowInfo"
+            >点击要素获取对应要素信息</el-button
+        >
+    </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import { initMap } from '@/mapLibs/initMap';
 import { marker } from '@/mapLibs/marker';
+let clickToShowInfo = ref();
 onMounted(() => {
     const map = initMap('map_container');
     const coords = [
@@ -14,7 +19,7 @@ onMounted(() => {
         [119.9039, 36.7616],
         [118.754, 33.6899],
     ];
-    marker(map, coords);
+    clickToShowInfo.value = marker(map, coords);
 });
 </script>
 
@@ -22,5 +27,12 @@ onMounted(() => {
 #map_container {
     width: 100%;
     height: 100%;
+    position: relative;
+    .wrap_btn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 3;
+    }
 }
 </style>

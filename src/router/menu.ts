@@ -47,4 +47,12 @@ export default [
             menuName: '渲染marker点',
         },
     },
+    {
+        path: 'measure',
+        name: 'measure',
+        component: () => import('@/pages/measure.vue'),
+        meta: {
+            menuName: '测量',
+        },
+    },
 ];
